@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HeaderView">
+        <attr name="firstIcon" format="reference" />
+        <attr name="secondIcon" format="reference" />
+        <attr name="lastIcon" format="reference" />
+        <attr name="colorHeader" format="reference" />
+        <attr name="title" />
+    </declare-styleable>
+</resources>

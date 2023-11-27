@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Entertain Guide</string>
+    <string name="home">Início</string>
+    <string name="entertainment">Entreterimento</string>
+    <string name="list">Listas</string>
+    <string name="profile">Perfil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

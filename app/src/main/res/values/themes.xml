@@ -1,0 +1,8 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EntertainGuide" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple</item>
+    </style>
+
+    <style name="Theme.EntertainGuide" parent="Base.Theme.EntertainGuide" />
+</resources>

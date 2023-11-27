@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1010132759958",
+    "project_id": "entertainguide",
+    "storage_bucket": "entertainguide.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010132759958:android:059147de6f5a70acd159b7",
+        "android_client_info": {
+          "package_name": "com.athena.entertainguide"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC325yr7ExRHooWQ4DMcaunEBQ9LB0OyCQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
