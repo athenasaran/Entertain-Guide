@@ -51,6 +51,9 @@ A ideia inicial era listar filmes, seriés e jogos, criando listas. O problema a
 - Ao clicar no filme específico não está sendo mostrado mais informações sobre o filme selecionado. Porém, já foi criado o request na api, no repository, na business e na viewmodel, além da tela já esta pronta.
 - Estou com erro no request.
 - Implementar tela de erro.
+- Acessibilidade.
+- Teste unitário.
+- Teste de snapshot.
 
 # Futuras feature
 Além de implementar o que falta gostaria de:
