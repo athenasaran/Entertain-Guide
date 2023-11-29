@@ -60,10 +60,13 @@ Além de implementar o que falta gostaria de:
 - Notificações.
 - Implementar animações
 
-![Screenshot_1701225297](https://github.com/athenasaran/Entertain-Guide/assets/23267293/29b5d17f-cb8e-44c2-a326-6d3e4d33e9d0)
+<img src="https://github.com/athenasaran/Entertain-Guide/assets/23267293/29b5d17f-cb8e-44c2-a326-6d3e4d33e9d0" alt="Descrição da imagem" width="500" height="900">
 
-![Screenshot_1701225314](https://github.com/athenasaran/Entertain-Guide/assets/23267293/071bab66-64ac-4e09-9314-dece02c349eb)
+<img src="https://github.com/athenasaran/Entertain-Guide/assets/23267293/071bab66-64ac-4e09-9314-dece02c349eb" alt="Descrição da imagem" width="500" height="900">
 
-![Screenshot_1701225318](https://github.com/athenasaran/Entertain-Guide/assets/23267293/966e9f70-adf3-4549-8027-e5340571b52c)
+<img src="https://github.com/athenasaran/Entertain-Guide/assets/23267293/966e9f70-adf3-4549-8027-e5340571b52c" alt="Descrição da imagem" width="500" height="900">
 
-![Screenshot_1701225440](https://github.com/athenasaran/Entertain-Guide/assets/23267293/69052c72-b657-4931-bea4-75db165f0c6a)
+<img src="https://github.com/athenasaran/Entertain-Guide/assets/23267293/69052c72-b657-4931-bea4-75db165f0c6a" alt="Descrição da imagem" width="500" height="900">
+
+<img src="https://github.com/athenasaran/Entertain-Guide/assets/23267293/767372f0-49ca-4617-affc-41804dd6941b" alt="Descrição da imagem" width="500" height="900">
+
