@@ -8,8 +8,7 @@ import android.os.Build
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.viewbinding.ViewBinding
-import com.athena.entertainguide.ui.BaseActivity
-
+import com.athena.entertainguide.ui.base.BaseActivity
 
 fun <VB : ViewBinding> BaseActivity<VB>.checkNotificationPermission(
     hasPermissionCallback: ((Boolean) -> Unit)? = null
@@ -42,8 +41,7 @@ fun <VB : ViewBinding> BaseActivity<VB>.checkNotificationPermission(
 
 fun Context.isNotificationEnabled(): Boolean {
 
-    val notificationManager: NotificationManager =
-        getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+    val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
     return notificationManager.areNotificationsEnabled()
 }

@@ -1,2 +1,12 @@
 rootProject.name = "EntertainGuide"
 include ':app'
+buildCache {
+    local {
+        enabled = true
+        directory = new File(rootDir, 'build-cache')
+        removeUnusedEntriesAfterDays = 7
+    }
+    remote(HttpBuildCache) {
+        enabled = false
+    }
+}

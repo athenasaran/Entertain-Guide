@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.athena.entertainguide.sharedPreferences.SharedPreferencesManager
 import com.athena.entertainguide.sharedPreferences.keys.SharedPreferencesKeys.PUSH_NOTIFICATION_CHECKED
-import com.athena.entertainguide.ui.BaseViewModel
+import com.athena.entertainguide.ui.base.BaseViewModel
 import com.athena.entertainguide.utils.date.DateProvider
 import java.util.concurrent.TimeUnit
 

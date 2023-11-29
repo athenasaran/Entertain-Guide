@@ -1,6 +1,7 @@
 package com.athena.entertainguide
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
 import com.athena.entertainguide.remoteconfig.ConfigFeatureToggle
 import com.athena.entertainguide.remoteconfig.toggle.GamesFeatureToggleKeys
 import com.athena.entertainguide.remoteconfig.toggle.MovieFeatureToggleKeys
@@ -14,6 +15,7 @@ class MainApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        setupNightMode()
         starterModules.start()
         configFeatureToggle.featureToggle()
     }
@@ -22,5 +24,9 @@ class MainApplication : Application() {
         configureRemote(GamesFeatureToggleKeys.getDefaultValueMap())
         configureRemote(MovieFeatureToggleKeys.getDefaultValueMap())
         configureRemote(SeriesFeatureToggleKeys.getDefaultValueMap())
+    }
+
+    private fun setupNightMode() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 }

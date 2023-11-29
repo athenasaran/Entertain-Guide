@@ -7,9 +7,14 @@ import com.athena.entertainguide.component.tabbar.TabBarItemEnum
 import com.athena.entertainguide.component.tabbar.TabBarItemFactory
 import com.athena.entertainguide.component.tabbar.customviews.TabBarItem
 import com.athena.entertainguide.databinding.ActivityHomeBinding
-import com.athena.entertainguide.ui.BaseActivity
+import com.athena.entertainguide.sharedPreferences.SharedPreferencesManager
+import com.athena.entertainguide.sharedPreferences.keys.SharedPreferencesKeys
+import com.athena.entertainguide.ui.base.BaseActivity
+import com.athena.entertainguide.ui.entertainment.EntertainmentFragment
 import com.athena.entertainguide.ui.initial.InitialFragment
-import com.athena.entertainguide.utils.notifications.checkNotificationPermission
+import com.athena.entertainguide.ui.login.LoginFragment
+import com.athena.entertainguide.ui.profile.ProfileFragment
+import com.athena.entertainguide.ui.savelist.SaveListFragment
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -21,21 +26,13 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
     private val tabBarItemFactory: TabBarItemFactory by inject()
     private val homeViewModel: HomeViewModel by viewModel()
+    private val sharedPreferences: SharedPreferencesManager by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupBottomNavigation(savedInstanceState != null)
         bindElements()
         onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
-    }
-
-    override fun onStart() {
-        super.onStart()
-        if (homeViewModel.shouldCheckForNotificationPermission()) {
-            checkNotificationPermission {
-                homeViewModel.notificationPermissionChecked()
-            }
-        }
     }
 
     private fun bindElements() {
@@ -45,9 +42,9 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     private fun bindTabBarPosition(position: Int) {
         when (position) {
             TabBarItemEnum.HOME.ordinal -> showDefaultFragment(InitialFragment.newInstance())
-            TabBarItemEnum.ENTERTAINMENT.ordinal -> showDefaultFragment(InitialFragment.newInstance())
-            TabBarItemEnum.LIST.ordinal -> showDefaultFragment(InitialFragment.newInstance())
-            TabBarItemEnum.PROFILE.ordinal -> showDefaultFragment(InitialFragment.newInstance())
+            TabBarItemEnum.ENTERTAINMENT.ordinal -> showDefaultFragment(EntertainmentFragment.newInstance())
+            TabBarItemEnum.LIST.ordinal -> showDefaultFragment(SaveListFragment.newInstance())
+            TabBarItemEnum.PROFILE.ordinal -> setupProfileOrLogin()
         }
     }
 
@@ -55,6 +52,15 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         val items = tabBarItemFactory.createItems()
         tabBarView.setItems(items, TabBarItemEnum.HOME.ordinal, recreated)
         tabBarView.setMenuClickListener(::onTabBarItemSelected)
+    }
+
+    private fun setupProfileOrLogin() {
+        val userLogged = sharedPreferences.getBoolean(SharedPreferencesKeys.LOGGED_USER.key)
+        if (userLogged) {
+            showDefaultFragment(ProfileFragment.newInstance())
+        } else {
+            showDefaultFragment(LoginFragment.newInstance())
+        }
     }
 
     private fun onTabBarItemSelected(tabBarItem: TabBarItem) {

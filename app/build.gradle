@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace 'com.athena.entertainguide'
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.athena.entertainguide"
-        minSdk 24
-        targetSdk 34
+        minSdk 26
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -25,11 +25,14 @@ android {
     }
 
     buildTypes {
-        release {
-            minifyEnabled true
+        debug {
+            initWith release
+            debuggable = true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/3/\""
-            buildConfigField "String", "API_KEY", "b0f9d745dd2342bbbf78a97690df1668"
+            buildConfigField "String", "API_KEY", "\"b0f9d745dd2342bbbf78a97690df1668\""
+            signingConfig signingConfigs.debug
         }
     }
 
@@ -42,12 +45,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = '17'
+        jvmTarget = '11'
     }
 
     packagingOptions {
@@ -57,16 +60,31 @@ android {
 }
 
 dependencies {
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'io.insert-koin:koin-android:3.4.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'com.google.android.material:material:1.8.0'
+
+    //moshi
+    implementation "com.squareup.moshi:moshi-kotlin:1.15.0"
+    implementation 'com.squareup.moshi:moshi:1.15.0'
+    implementation 'com.squareup.moshi:moshi-adapters:1.15.0'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     implementation platform('com.google.firebase:firebase-bom:32.6.0')
     implementation 'com.google.firebase:firebase-config-ktx:21.6.0'
 
     implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation 'com.google.android.gms:play-services-base:18.2.0'
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+    implementation 'com.google.firebase:firebase-auth-ktx:22.3.0'
+    kapt 'com.github.bumptech.glide:compiler:4.16.0'
+
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

@@ -4,6 +4,24 @@
     <string name="entertainment">Entreterimento</string>
     <string name="list">Listas</string>
     <string name="profile">Perfil</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="popular_movie">Filmes Populares</string>
+    <string name="popular_series">Series Populares</string>
+    <string name="more_rated_movies">Filmes Mais votados </string>
+    <string name="more_rated_series">Series Mais votados </string>
+    <string name="up_coming">Próximos a estrearem</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="password">Senha</string>
+    <string name="email">Email</string>
+    <string name="or">OU LOGIN COM O GOOGLE</string>
+    <string name="create_account">Criar uma conta</string>
+    <string name="sign_in">Sign in</string>
+    <string name="user_created">Usuário criado, por favor, faça o login</string>
+    <string name="authentication_failed">Autenticação falhou.</string>
+    <string name="average_info_movie">%s/10</string>
+    <string name="release_data_info_movie">Data de Lançamento:</string>
+    <string name="runtime_info_movie">Duração:</string>
+    <string name="save_list">Filmes salvos para verem depois</string>
+    <string name="title_entertainment">Filmes que estão no cinema</string>
+    <string name="title_entertainment_not_available">Lista somente para usuários logados</string>
 </resources>

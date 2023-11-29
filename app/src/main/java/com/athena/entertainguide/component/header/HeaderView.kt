@@ -1,7 +1,6 @@
 package com.athena.entertainguide.component.header
 
 import android.content.Context
-import android.graphics.drawable.ColorDrawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.ImageView
@@ -19,6 +18,7 @@ internal class HeaderView @JvmOverloads constructor(
 
     private val binding = HeaderViewBinding.inflate(LayoutInflater.from(context), this, true)
 
+    /** Title to header */
     var title: String = ""
         set(value) {
             field = value
@@ -26,6 +26,7 @@ internal class HeaderView @JvmOverloads constructor(
             binding.title.text = field
         }
 
+    /** First icon on left */
     var firstIconButton: Int? = null
         set(value) {
             field = value
@@ -33,6 +34,7 @@ internal class HeaderView @JvmOverloads constructor(
             setIconButton(binding.firstIcon, field)
         }
 
+    /** First icon after title */
     var secondIconButton: Int? = null
         set(value) {
             field = value
@@ -40,6 +42,7 @@ internal class HeaderView @JvmOverloads constructor(
             setIconButton(binding.secondIcon, field)
         }
 
+    /** Second icon after title */
     var lastIconButton: Int? = null
         set(value) {
             field = value
@@ -47,41 +50,19 @@ internal class HeaderView @JvmOverloads constructor(
             setIconButton(binding.lastIcon, field)
         }
 
+    /** Color of Header */
     var color: Int? = null
         set(value) {
             field = value
             setBackgroundColor(color)
         }
 
-    init {
-        val array = context.obtainStyledAttributes(attrs, R.styleable.HeaderView, 0, 0)
-
-        firstIconButton = array.getResourceId(
-            R.styleable.HeaderView_firstIcon,
-            NONE
-        )
-
-        secondIconButton = array.getResourceId(
-            R.styleable.HeaderView_secondIcon,
-            NONE
-        )
-
-        lastIconButton = array.getResourceId(
-            R.styleable.HeaderView_lastIcon,
-            NONE
-        )
-
-        color = array.getResourceId(
-            R.styleable.HeaderView_colorHeader,
-            NONE
-        )
-
-        title = array.getString(
-            R.styleable.HeaderView_title
-        ).orEmpty()
-
-        array.recycle()
-    }
+    /** Color of title of header */
+    var colorText: Int? = null
+        set(value) {
+            field = value
+            setTextColor(colorText)
+        }
 
     fun onFirstIconButtonClicked(backClicked: () -> Unit) {
         binding.firstIcon.setOnClickListener {
@@ -113,12 +94,11 @@ internal class HeaderView @JvmOverloads constructor(
     }
 
     private fun setBackgroundColor(color: Int?) {
-        binding.header.background = ColorDrawable(
-            ContextCompat.getColor(
-                context,
-                color ?: R.color.purple
-            )
-        )
+        binding.header.setBackgroundColor(ContextCompat.getColor(context, color ?: R.color.purple))
+    }
+
+    private fun setTextColor(color: Int?) {
+        binding.title.setTextColor(ContextCompat.getColor(context, color ?: R.color.white))
     }
 
     private companion object {
