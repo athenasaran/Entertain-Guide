@@ -36,7 +36,7 @@ Api que disponibiliza lista de filmes, TV, atores e imagens.
 A ideia inicial era listar filmes, seriés e jogos, criando listas. O problema a ser selecionado é que normalmente seria necessário baixar 2 apps, para filmes/series e outro para jogos. Então a solução seria no app ter disponível jogo, series e filmes.
 
 # O que foi implementado
-- Foi implementado uma lista de filmes mais avaliados e mais populares.
+- Foi implementado uma lista de filmes mais avaliados, mais populares e now playing.
 - Tela de login e cadastro usando Authentication do Firebase.
 - Componente HeaderView.
 - Componente CardView.
@@ -48,8 +48,6 @@ A ideia inicial era listar filmes, seriés e jogos, criando listas. O problema a
 - Não foi utilizado a feature toggle para desligar e ligar, por exemplo, a lista de jogos ou filmes. Porém, já esta configurado no projeto.
 - Login usando o Google. Porém, a maior parte está implementada.
 - Usuário poder comentar dentro de um filme especifico e avaliá-lo.Porém, já foi adicionado os ícones e seus respectivos listeners.
-- Ao clicar no filme específico não está sendo mostrado mais informações sobre o filme selecionado. Porém, já foi criado o request na api, no repository, na business e na viewmodel, além da tela já esta pronta.
-- Estou com erro no request.
 - Implementar tela de erro.
 - Acessibilidade.
 - Teste unitário.
