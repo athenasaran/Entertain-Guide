@@ -8,7 +8,7 @@
     tools:context=".ui.savelist.SaveListFragment">
 
     <TextView
-        android:id="@+id/title_save_list"
+        android:id="@+id/tv_title_save_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/spacing_24"
@@ -32,10 +32,10 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_save_list" />
+        app:layout_constraintTop_toBottomOf="@id/tv_title_save_list" />
 
     <TextView
-        android:id="@+id/save_list_not_available"
+        android:id="@+id/tv_save_list_not_available"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/spacing_24"
@@ -48,7 +48,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_save_list" />
+        app:layout_constraintTop_toBottomOf="@id/tv_title_save_list" />
 
     <Button
         android:id="@+id/bt_sign_in"
@@ -65,13 +65,13 @@
         android:textSize="@dimen/text_size_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/save_list_not_available" />
+        app:layout_constraintTop_toBottomOf="@id/tv_save_list_not_available" />
 
     <androidx.constraintlayout.widget.Group
-        android:id="@+id/save_list_not_available_group"
+        android:id="@+id/gr_save_list_not_available"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:constraint_referenced_ids="bt_sign_in, save_list_not_available" />
+        app:constraint_referenced_ids="bt_sign_in, tv_save_list_not_available" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

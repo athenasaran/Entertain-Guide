@@ -13,7 +13,7 @@ internal class TopRatedCardViewHolder(val binding: VhCardViewTopRatedBinding) : 
     }
 
     private fun setupContent(resultList: ResultItemTopRated) = with(binding) {
-        cardView.apply {
+        cvCardViewTopRated.apply {
             imageCard = resultList.posterPath
             title = resultList.title
             textColorTag = R.color.black
@@ -26,7 +26,7 @@ internal class TopRatedCardViewHolder(val binding: VhCardViewTopRatedBinding) : 
 
     private fun setupListeners(onClick: ((ResultItemTopRated, Int) -> Unit)?, item: ResultItemTopRated, position: Int) =
         with(binding) {
-            cardView.setOnClickListener {
+            cvCardViewTopRated.setOnClickListener {
                 onClick?.invoke(item, position)
             }
         }

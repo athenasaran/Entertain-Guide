@@ -33,15 +33,18 @@ class SaveListFragment : BaseFragment<FragmentSaveListBinding>() {
         setupClickListener()
     }
 
-    private fun verifyLoginUser() = with(binding) {
+    private fun verifyLoginUser() {
         val userLogged = sharedPreferences.getBoolean(SharedPreferencesKeys.LOGGED_USER.key)
         if (userLogged) {
-            rvSaveList.isVisible = true
-            saveListNotAvailableGroup.isVisible = false
+            setVisibility(recyclerViewVisibility = true, groupVisibility = false)
         } else {
-            saveListNotAvailableGroup.isVisible = true
-            rvSaveList.isVisible = false
+            setVisibility(recyclerViewVisibility = false, groupVisibility = true)
         }
+    }
+
+    private fun setVisibility(recyclerViewVisibility: Boolean, groupVisibility: Boolean) = with(binding) {
+        rvSaveList.isVisible = recyclerViewVisibility
+        grSaveListNotAvailable.isVisible = groupVisibility
     }
 
     private fun setupClickListener() {

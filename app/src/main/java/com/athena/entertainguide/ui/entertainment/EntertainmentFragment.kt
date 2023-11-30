@@ -12,7 +12,7 @@ import com.athena.entertainguide.R
 import com.athena.entertainguide.databinding.FragmentEntertainmentBinding
 import com.athena.entertainguide.entity.NowPlayingEntities
 import com.athena.entertainguide.ui.base.BaseFragment
-import com.athena.entertainguide.ui.entertainment.nowshowing.NowPlayingViewAdapter
+import com.athena.entertainguide.ui.entertainment.nowplaying.NowPlayingViewAdapter
 import com.athena.entertainguide.ui.infomovie.InfoMovieFragment
 import com.athena.entertainguide.ui.initial.state.EntertainmentState
 import org.koin.android.ext.android.inject
@@ -48,7 +48,7 @@ internal class EntertainmentFragment : BaseFragment<FragmentEntertainmentBinding
         }
     }
 
-    private fun setupInfoHeader() = with(binding.entertainmentHeader) {
+    private fun setupInfoHeader() = with(binding.hvEntertainment) {
         title = this@EntertainmentFragment.getString(R.string.entertainment)
         colorText = R.color.white
         color = R.color.purple
@@ -78,7 +78,7 @@ internal class EntertainmentFragment : BaseFragment<FragmentEntertainmentBinding
 
     private fun configureLoading(isLoading: Boolean) = with(binding) {
         svEntertainment.isVisible = !isLoading
-        loading.isVisible = isLoading
+        piLoadingEntertainment.isVisible = isLoading
     }
 
     private fun configureError(exception: Exception) {

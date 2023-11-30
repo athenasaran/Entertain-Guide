@@ -1,4 +1,4 @@
-package com.athena.entertainguide.ui.entertainment.nowshowing
+package com.athena.entertainguide.ui.entertainment.nowplaying
 
 import androidx.recyclerview.widget.RecyclerView
 import com.athena.entertainguide.R
@@ -14,16 +14,15 @@ internal class NowPlayingViewHolder(val binding: VhNowPlayingBinding) : Recycler
     }
 
     private fun setupContent(resultList: ResultItemNowPlaying) = with(binding) {
-        nowShowingImage.loadImageUrl(binding.root.context, resultList.posterPath, R.drawable.image_placeholder)
-        nowShowingTitle.text = resultList.title
-        nowShowingAverage.text = resultList.voteAverage.toString()
-        nowShowingReleaseDate.text = resultList.releaseDate
-
+        ivNowPlaying.loadImageUrl(binding.root.context, resultList.posterPath, R.drawable.image_placeholder)
+        tvNowPlayingTitle.text = resultList.title
+        tvNowPlayingAverage.text = resultList.voteAverage.toString()
+        tvNowPlayingReleaseDate.text = resultList.releaseDate
     }
 
     private fun setupListeners(onClick: ((ResultItemNowPlaying, Int) -> Unit)?, item: ResultItemNowPlaying, position: Int) =
         with(binding) {
-            nowShowingContainer.setOnClickListener {
+            clNowPlayingContainer.setOnClickListener {
                 onClick?.invoke(item, position)
             }
         }

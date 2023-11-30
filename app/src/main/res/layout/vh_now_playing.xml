@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/now_showing_container"
+    android:id="@+id/cl_now_playing_container"
     android:layout_marginHorizontal="@dimen/spacing_24"
     android:background="@drawable/border_gray">
 
     <ImageView
-        android:id="@+id/now_showing_image"
+        android:id="@+id/iv_now_playing"
         android:layout_width="85dp"
         android:layout_height="128dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,7 +19,7 @@
         tools:src="@drawable/ic_star" />
 
     <TextView
-        android:id="@+id/now_showing_title"
+        android:id="@+id/tv_now_playing_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:maxLines="1"
@@ -27,12 +27,12 @@
         android:layout_marginTop="@dimen/spacing_16"
         android:textColor="@color/purple"
         android:textSize="@dimen/text_size_16"
-        app:layout_constraintStart_toEndOf="@id/now_showing_image"
-        app:layout_constraintTop_toTopOf="@id/now_showing_image"
+        app:layout_constraintStart_toEndOf="@id/iv_now_playing"
+        app:layout_constraintTop_toTopOf="@id/iv_now_playing"
         tools:text="@string/more_rated_movies" />
 
     <ImageView
-        android:id="@+id/now_showing_icon_start"
+        android:id="@+id/iv_now_playing_icon_start"
         android:layout_width="@dimen/spacing_24"
         android:layout_height="@dimen/spacing_24"
         android:layout_marginStart="@dimen/spacing_16"
@@ -40,13 +40,13 @@
         android:contentDescription="@null"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/now_showing_average"
-        app:layout_constraintStart_toEndOf="@id/now_showing_image"
-        app:layout_constraintTop_toBottomOf="@id/now_showing_title"
+        app:layout_constraintEnd_toStartOf="@id/tv_now_playing_average"
+        app:layout_constraintStart_toEndOf="@id/iv_now_playing"
+        app:layout_constraintTop_toBottomOf="@id/tv_now_playing_title"
         app:srcCompat="@drawable/ic_star" />
 
     <TextView
-        android:id="@+id/now_showing_average"
+        android:id="@+id/tv_now_playing_average"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/spacing_8"
@@ -56,11 +56,11 @@
         android:textColor="@color/purple"
         android:textSize="@dimen/text_size_12"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/now_showing_icon_start"
-        app:layout_constraintTop_toBottomOf="@id/now_showing_title" />
+        app:layout_constraintStart_toEndOf="@id/iv_now_playing_icon_start"
+        app:layout_constraintTop_toBottomOf="@id/tv_now_playing_title" />
 
     <ImageView
-        android:id="@+id/now_showing_icon_time"
+        android:id="@+id/iv_now_playing_icon_time"
         android:layout_width="@dimen/spacing_24"
         android:layout_height="@dimen/spacing_24"
         android:layout_marginVertical="@dimen/spacing_24"
@@ -69,12 +69,12 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintStart_toEndOf="@id/now_showing_image"
-        app:layout_constraintTop_toBottomOf="@id/now_showing_average"
+        app:layout_constraintStart_toEndOf="@id/iv_now_playing"
+        app:layout_constraintTop_toBottomOf="@id/tv_now_playing_average"
         app:srcCompat="@drawable/ic_time" />
 
     <TextView
-        android:id="@+id/now_showing_release_date"
+        android:id="@+id/tv_now_playing_release_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/spacing_8"
@@ -84,7 +84,7 @@
         android:textColor="@color/purple"
         android:textSize="@dimen/text_size_12"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/now_showing_icon_time"
-        app:layout_constraintTop_toBottomOf="@id/now_showing_average" />
+        app:layout_constraintStart_toEndOf="@id/iv_now_playing_icon_time"
+        app:layout_constraintTop_toBottomOf="@id/tv_now_playing_average" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

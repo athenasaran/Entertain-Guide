@@ -70,17 +70,17 @@ class TagView @JvmOverloads constructor(
     }
 
     private fun setupTextColor(color: Int?): Unit = with(binding) {
-        tagText.setTextColor(ContextCompat.getColorStateList(context, color ?: defaultColor))
+        tvTextTag.setTextColor(ContextCompat.getColorStateList(context, color ?: defaultColor))
     }
 
-    private fun setupIcon(@DrawableRes icon: Int?): Unit = with(binding.tagIcon) {
+    private fun setupIcon(@DrawableRes icon: Int?): Unit = with(binding.ivIconTag) {
         val iconDrawable = icon?.let { ContextCompat.getDrawable(context, it) }
         this.background = iconDrawable
         this.isVisible = iconDrawable != null
     }
 
     private fun setupText(label: CharSequence): Unit = with(binding) {
-        tagText.text = label
+        tvTextTag.text = label
         root.contentDescription = label
     }
 

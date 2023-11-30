@@ -13,7 +13,7 @@ internal class PopularCardViewHolder(val binding: VhCardViewPopularBinding) : Re
     }
 
     private fun setupContent(resultList: ResultItemPopular) = with(binding) {
-        cardView.apply {
+        cvCardViewPopular.apply {
             imageCard = resultList.posterPath
             title = resultList.title
             textColorTag = R.color.black
@@ -26,7 +26,7 @@ internal class PopularCardViewHolder(val binding: VhCardViewPopularBinding) : Re
 
     private fun setupListeners(onClick: ((ResultItemPopular, Int) -> Unit)?, item: ResultItemPopular, position: Int) =
         with(binding) {
-            cardView.setOnClickListener {
+            cvCardViewPopular.setOnClickListener {
                 onClick?.invoke(item, position)
             }
         }

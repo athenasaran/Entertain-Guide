@@ -6,7 +6,7 @@
     android:backgroundTint="@android:color/white">
 
     <com.athena.entertainguide.component.card.CardView
-        android:id="@+id/card_view"
+        android:id="@+id/cv_card_view_popular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/spacing_8"

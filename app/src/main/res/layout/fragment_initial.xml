@@ -8,7 +8,7 @@
     tools:context=".ui.initial.InitialFragment">
 
     <com.athena.entertainguide.component.header.HeaderView
-        android:id="@+id/header"
+        android:id="@+id/cl_header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/spacing_24"
@@ -24,7 +24,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header">
+        app:layout_constraintTop_toBottomOf="@id/cl_header">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -87,7 +87,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.progressindicator.CircularProgressIndicator
-        android:id="@+id/loading"
+        android:id="@+id/pi_loading_entertainment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:indeterminate="true"

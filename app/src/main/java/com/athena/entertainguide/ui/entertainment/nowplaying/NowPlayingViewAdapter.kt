@@ -1,4 +1,4 @@
-package com.athena.entertainguide.ui.entertainment.nowshowing
+package com.athena.entertainguide.ui.entertainment.nowplaying
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

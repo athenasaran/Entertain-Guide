@@ -11,9 +11,9 @@ import com.athena.entertainguide.component.tabbar.customviews.TabBarItem
 internal class TabBarItemFactory(private val resources: Resources) {
 
     /**
-     * Creates a list of HomeNavigationItem instances based on the HomeBottomNavigationItemEnum values and their feature toggles.
+     * Creates a list of TabBarItem instances based on the TabBarItemEnum values and their feature toggles.
      *
-     * @return List of HomeNavigationItem instances filtered by the feature toggles.
+     * @return List of TabBarItem instances filtered by the feature toggles.
      */
     fun createItems(): List<TabBarItem> {
         val menuItems = TabBarItemEnum.values().map { item ->

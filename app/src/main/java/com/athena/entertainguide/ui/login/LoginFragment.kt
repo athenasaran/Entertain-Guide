@@ -95,7 +95,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(), LoginWithGoogle.OnLo
     }
 
     private fun setVisibilityLoading(isVisible: Boolean) {
-        binding.loading.isVisible = isVisible
+        binding.piLoadingEntertainment.isVisible = isVisible
     }
 
     override fun onLoginSuccess(account: GoogleSignInAccount) {

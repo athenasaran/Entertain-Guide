@@ -12,19 +12,19 @@
     tools:backgroundTint="@color/white_neutral">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/tag_icon"
+        android:id="@+id/iv_icon_tag"
         android:layout_width="@dimen/spacing_16"
         android:layout_height="@dimen/spacing_16"
         android:layout_marginEnd="@dimen/spacing_4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/tag_text"
+        app:layout_constraintEnd_toStartOf="@id/tv_text_tag"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:background="@drawable/ic_home"
         tools:backgroundTint="@color/purple" />
 
     <TextView
-        android:id="@+id/tag_text"
+        android:id="@+id/tv_text_tag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxLines="1"
@@ -32,7 +32,7 @@
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tag_icon"
+        app:layout_constraintStart_toEndOf="@id/iv_icon_tag"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Label"
         tools:textColor="@color/purple" />

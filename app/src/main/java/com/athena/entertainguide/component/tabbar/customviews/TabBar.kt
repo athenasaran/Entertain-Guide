@@ -31,7 +31,7 @@ internal class TabBar @JvmOverloads constructor(
     }
 
     private fun rebuildTabBar() {
-        binding.tabBarContainer.removeAllViews()
+        binding.llTabBarContainer.removeAllViews()
         navigationItemViews.clear()
 
         val weight = DEFAULT_SCALE / navigationItems.size
@@ -43,7 +43,7 @@ internal class TabBar @JvmOverloads constructor(
             }
 
             navigationItemViews.add(homeNavigationItem)
-            binding.tabBarContainer.addView(homeNavigationItem)
+            binding.llTabBarContainer.addView(homeNavigationItem)
         }
     }
 

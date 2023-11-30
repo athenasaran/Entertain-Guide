@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/header"
+    android:id="@+id/cl_header"
     android:layout_width="match_parent"
     android:layout_height="@dimen/header_size"
     android:paddingHorizontal="@dimen/spacing_8">
 
     <ImageView
-        android:id="@+id/first_icon"
+        android:id="@+id/iv_first_icon_header"
         android:layout_width="@dimen/spacing_32"
         android:layout_height="@dimen/spacing_32"
         android:gravity="center"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/tv_title_header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -32,16 +32,16 @@
         tools:text="Title" />
 
     <ImageView
-        android:id="@+id/second_icon"
+        android:id="@+id/iv_second_icon_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/last_icon"
+        app:layout_constraintEnd_toStartOf="@+id/iv_last_icon_header"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/last_icon"
+        android:id="@+id/iv_last_icon_header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:visibility="gone"

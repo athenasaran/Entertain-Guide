@@ -86,19 +86,19 @@ class CardView @JvmOverloads constructor(
             setupColorTitle(value)
         }
 
-    fun setOnClickListenerRate(click: (() -> Unit)) = with(binding.cardViewRate) {
+    fun setOnClickListenerRate(click: (() -> Unit)) = with(binding.ivCardViewRate) {
         click.invoke()
     }
 
-    fun setOnClickListenerComment(click: (() -> Unit)) = with(binding.cardViewComment) {
+    fun setOnClickListenerComment(click: (() -> Unit)) = with(binding.ivCardViewComment) {
         click.invoke()
     }
 
-    fun setOnClickListenerShared(click: (() -> Unit)) = with(binding.cardViewShare) {
+    fun setOnClickListenerShared(click: (() -> Unit)) = with(binding.ivCardViewShare) {
         click.invoke()
     }
 
-    fun setOnClickListenerSaveOnList(click: (() -> Unit)) = with(binding.cardViewSaveList) {
+    fun setOnClickListenerSaveOnList(click: (() -> Unit)) = with(binding.ivCardViewSaveList) {
         click.invoke()
     }
 
@@ -115,25 +115,25 @@ class CardView @JvmOverloads constructor(
     }
 
     private fun setupBackgroundColorTag(color: Int?): Unit = with(binding) {
-        cardViewTag.colorBackground = color ?: defaultColor
+        tagCardView.colorBackground = color ?: defaultColor
     }
 
     private fun setupColorTitle(color: Int?): Unit = with(binding) {
-        cardViewTitle.setTextColor(ContextCompat.getColor(context, color ?: defaultColor))
+        tvCardViewTitle.setTextColor(ContextCompat.getColor(context, color ?: defaultColor))
     }
 
     private fun setupIcon(icon: Int?): Unit = with(binding) {
-        cardViewTag.icon = icon
+        tagCardView.icon = icon
     }
 
     private fun setupTextColorTag(color: Int?): Unit = with(binding) {
-        cardViewTag.textColor = color ?: defaultColor
+        tagCardView.textColor = color ?: defaultColor
     }
 
     private fun setupImageCard(imageCard: CharSequence) {
         val baseUrl = "http://image.tmdb.org/t/p/w500"
         val url = baseUrl + imageCard
-        binding.cardViewImage.loadImageWithExternalListener(
+        binding.ivCardViewImage.loadImageWithExternalListener(
             url = url, externalListener = createImageLoadingCallback()
         )
     }
@@ -142,7 +142,7 @@ class CardView @JvmOverloads constructor(
         private val bindingRef: WeakReference<CardViewBinding> = WeakReference(binding)
 
         override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable?>, isFirstResource: Boolean): Boolean {
-            bindingRef.get()?.cardViewImage?.setBackgroundResource(R.color.white_neutral)
+            bindingRef.get()?.ivCardViewImage?.setBackgroundResource(R.color.white_neutral)
 
             return false
         }
@@ -159,11 +159,11 @@ class CardView @JvmOverloads constructor(
     }
 
     private fun setupLabelTag(titleTag: CharSequence): Unit = with(binding) {
-        cardViewTag.label = titleTag
+        tagCardView.label = titleTag
     }
 
     private fun setupTitle(titleTag: CharSequence): Unit = with(binding) {
-        cardViewTitle.text = titleTag
+        tvCardViewTitle.text = titleTag
         root.contentDescription = titleTag
     }
 

@@ -62,7 +62,7 @@ class InfoMovieFragment : BaseFragment<FragmentInfoMovieBinding>() {
 
     private fun configureLoading(isLoading: Boolean) = with(binding) {
         infoMovieContainer.isVisible = !isLoading
-        loading.isVisible = isLoading
+        piLoadingEntertainment.isVisible = isLoading
     }
 
     private fun configureError(exception: Exception) {

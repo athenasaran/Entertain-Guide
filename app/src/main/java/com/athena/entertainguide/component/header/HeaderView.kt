@@ -23,7 +23,7 @@ internal class HeaderView @JvmOverloads constructor(
         set(value) {
             field = value
 
-            binding.title.text = field
+            binding.tvTitleHeader.text = field
         }
 
     /** First icon on left */
@@ -31,7 +31,7 @@ internal class HeaderView @JvmOverloads constructor(
         set(value) {
             field = value
 
-            setIconButton(binding.firstIcon, field)
+            setIconButton(binding.ivFirstIconHeader, field)
         }
 
     /** First icon after title */
@@ -39,7 +39,7 @@ internal class HeaderView @JvmOverloads constructor(
         set(value) {
             field = value
 
-            setIconButton(binding.secondIcon, field)
+            setIconButton(binding.ivSecondIconHeader, field)
         }
 
     /** Second icon after title */
@@ -47,7 +47,7 @@ internal class HeaderView @JvmOverloads constructor(
         set(value) {
             field = value
 
-            setIconButton(binding.lastIcon, field)
+            setIconButton(binding.ivLastIconHeader, field)
         }
 
     /** Color of Header */
@@ -65,19 +65,19 @@ internal class HeaderView @JvmOverloads constructor(
         }
 
     fun onFirstIconButtonClicked(backClicked: () -> Unit) {
-        binding.firstIcon.setOnClickListener {
+        binding.ivFirstIconHeader.setOnClickListener {
             backClicked.invoke()
         }
     }
 
     fun onSecondIconButtonClicked(firstIconButtonClicked: () -> Unit) {
-        binding.secondIcon.setOnClickListener {
+        binding.ivSecondIconHeader.setOnClickListener {
             firstIconButtonClicked.invoke()
         }
     }
 
     fun onLastIconButtonClicked(secondIconButtonClicked: () -> Unit) {
-        binding.lastIcon.setOnClickListener {
+        binding.ivLastIconHeader.setOnClickListener {
             secondIconButtonClicked.invoke()
         }
     }
@@ -94,11 +94,11 @@ internal class HeaderView @JvmOverloads constructor(
     }
 
     private fun setBackgroundColor(color: Int?) {
-        binding.header.setBackgroundColor(ContextCompat.getColor(context, color ?: R.color.purple))
+        binding.clHeader.setBackgroundColor(ContextCompat.getColor(context, color ?: R.color.purple))
     }
 
     private fun setTextColor(color: Int?) {
-        binding.title.setTextColor(ContextCompat.getColor(context, color ?: R.color.white))
+        binding.tvTitleHeader.setTextColor(ContextCompat.getColor(context, color ?: R.color.white))
     }
 
     private companion object {

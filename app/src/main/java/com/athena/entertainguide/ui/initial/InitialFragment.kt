@@ -45,7 +45,7 @@ class InitialFragment : BaseFragment<FragmentInitialBinding>() {
         setupObservers()
     }
 
-    private fun setupInfoHeader() = with(binding.header) {
+    private fun setupInfoHeader() = with(binding.clHeader) {
         title = this@InitialFragment.getString(R.string.home)
         colorText = R.color.white
         color = R.color.purple
@@ -130,7 +130,7 @@ class InitialFragment : BaseFragment<FragmentInitialBinding>() {
 
     private fun configureLoading(isLoading: Boolean) = with(binding) {
         svInitial.isVisible = !isLoading
-        loading.isVisible = isLoading
+        piLoadingEntertainment.isVisible = isLoading
     }
 
     companion object {
