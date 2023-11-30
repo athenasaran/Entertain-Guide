@@ -71,3 +71,5 @@ Além de implementar o que falta gostaria de:
 
 <img src="https://github.com/athenasaran/Entertain-Guide/assets/23267293/767372f0-49ca-4617-affc-41804dd6941b" alt="Descrição da imagem" width="500" height="900">
 
+<img src="https://github.com/athenasaran/Entertain-Guide/assets/23267293/27f00c12-ff5f-4cda-bd53-0f2325395e38" alt="Descrição da imagem" width="500" height="900">
+
