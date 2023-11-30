@@ -6,7 +6,7 @@ import com.athena.entertainguide.response.NetworkResponse
 
 internal interface SeriesRepository {
 
-    suspend fun getPopularSeries(page: String, language: String): NetworkResponse<PopularResponse>
+    suspend fun getPopularSeries(page: Int, language: String): NetworkResponse<PopularResponse>
 
-    suspend fun getTopRatedSeries(page: String, language: String): NetworkResponse<TopRatedResponse>
+    suspend fun getTopRatedSeries(page: Int, language: String): NetworkResponse<TopRatedResponse>
 }

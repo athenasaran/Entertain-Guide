@@ -6,6 +6,7 @@ import com.athena.entertainguide.repository.MovieRepository
 import com.athena.entertainguide.repository.entity.response.MovieInfoResponse
 import com.athena.entertainguide.response.ResultWrapper
 import com.athena.entertainguide.response.toResult
+import com.athena.entertainguide.utils.numbers.toBigDecimalWithPrecision
 import java.util.Locale
 
 internal class InfoMovieBusinessImpl(
@@ -20,10 +21,10 @@ internal class InfoMovieBusinessImpl(
         return MovieInfoEntities(
             id = movieInfoResponse.id,
             title = movieInfoResponse.title,
-            posterPath = movieInfoResponse.posterPath.orEmpty(),
+            backdropPath = movieInfoResponse.backdropPath.orEmpty(),
             releaseDate = movieInfoResponse.releaseDate,
             runtime = movieInfoResponse.runtime,
-            voteAverage = movieInfoResponse.voteAverage ?: 0.0,
+            voteAverage = toBigDecimalWithPrecision(movieInfoResponse.voteAverage),
             overview = movieInfoResponse.overview
         )
     }

@@ -11,12 +11,12 @@ internal interface SeriesApi {
     @GET("tv/popular")
     suspend fun getPopularSeries(
         @Query("language") languageId: String,
-        @Query("page") page: String
+        @Query("page") page: Int
     ): NetworkResponse<PopularResponse>
 
     @GET("tv/top_rated")
     suspend fun getTopRatedSeries(
         @Query("language") languageId: String,
-        @Query("page") page: String
+        @Query("page") page: Int
     ): NetworkResponse<TopRatedResponse>
 }

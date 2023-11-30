@@ -17,7 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <ImageView
             android:id="@+id/card_view_image"
             android:layout_width="match_parent"

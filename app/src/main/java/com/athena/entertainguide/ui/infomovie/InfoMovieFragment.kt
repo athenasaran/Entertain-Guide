@@ -11,7 +11,6 @@ import com.athena.entertainguide.R
 import com.athena.entertainguide.databinding.FragmentInfoMovieBinding
 import com.athena.entertainguide.entity.MovieInfoEntities
 import com.athena.entertainguide.ui.base.BaseFragment
-import com.athena.entertainguide.ui.initial.InitialFragment
 import com.athena.entertainguide.ui.initial.state.InfoMovieState
 import com.athena.entertainguide.utils.glide.loadImageUrl
 import org.koin.android.ext.android.inject
@@ -21,8 +20,6 @@ class InfoMovieFragment : BaseFragment<FragmentInfoMovieBinding>() {
     override val binding: FragmentInfoMovieBinding by lazy {
         FragmentInfoMovieBinding.inflate(layoutInflater)
     }
-
-    private val movieId: Int? = arguments?.getInt(MOVIE_ID)
 
     private val viewModel: InfoMovieViewModel by inject()
 
@@ -34,7 +31,7 @@ class InfoMovieFragment : BaseFragment<FragmentInfoMovieBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //viewModel.fetchPopularMovieItems(arguments?.getInt(MOVIE_ID) ?: 238)
+        viewModel.fetchPopularMovieItems(arguments?.getInt(MOVIE_ID) ?: 238)
         setupObserverInfoMovieState()
         setupOnPressBack()
     }
@@ -55,12 +52,12 @@ class InfoMovieFragment : BaseFragment<FragmentInfoMovieBinding>() {
     }
 
     private fun setupInfo(movieInfoEntities: MovieInfoEntities) = with(binding) {
-        titleInfoMovie.text = movieInfoEntities.id.toString()
+        titleInfoMovie.text = movieInfoEntities.title
         releaseDateInfoMovie.text = movieInfoEntities.releaseDate
         runtimeInfoMovie.text = movieInfoEntities.runtime.toString()
         averageInfoMovie.text = getString(R.string.average_info_movie).format(movieInfoEntities.voteAverage)
         overviewInfoMovie.text = movieInfoEntities.overview
-        imageInfoMovie.loadImageUrl(requireContext(), movieInfoEntities.posterPath ?: String(), R.drawable.image_placeholder)
+        imageInfoMovie.loadImageUrl(requireContext(), movieInfoEntities.backdropPath ?: String(), R.drawable.image_placeholder)
     }
 
     private fun configureLoading(isLoading: Boolean) = with(binding) {
@@ -74,14 +71,8 @@ class InfoMovieFragment : BaseFragment<FragmentInfoMovieBinding>() {
 
     private fun setupOnPressBack() {
         requireActivity().onBackPressedDispatcher.addCallback(this@InfoMovieFragment) {
-            gotoInitialFragment()
+            parentFragmentManager.popBackStackImmediate()
         }
-    }
-
-    private fun gotoInitialFragment() {
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, InitialFragment.newInstance())
-            .commit()
     }
 
     companion object {

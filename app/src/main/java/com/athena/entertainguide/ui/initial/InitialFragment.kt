@@ -124,6 +124,7 @@ class InitialFragment : BaseFragment<FragmentInitialBinding>() {
     private fun gotoFragment(fragment: Fragment) {
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
             .commit()
     }
 

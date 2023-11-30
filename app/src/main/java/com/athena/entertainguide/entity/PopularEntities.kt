@@ -9,5 +9,5 @@ internal data class ResultItemPopular(
     val id: Int,
     val posterPath: String,
     val title: String,
-    val voteAverage: Float
+    val voteAverage: Number
 )

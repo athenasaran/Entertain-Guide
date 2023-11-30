@@ -1,7 +1,9 @@
 package com.athena.entertainguide.di
 
+import com.athena.entertainguide.business.EntertainmentBusiness
 import com.athena.entertainguide.business.InfoMovieBusiness
 import com.athena.entertainguide.business.MovieBusiness
+import com.athena.entertainguide.business.impl.EntertainmentBusinessImpl
 import com.athena.entertainguide.business.impl.InfoMovieBusinessImpl
 import com.athena.entertainguide.business.impl.MovieBusinessImpl
 import com.athena.entertainguide.component.tabbar.TabBarItemFactory
@@ -10,6 +12,7 @@ import com.athena.entertainguide.repository.MovieRepository
 import com.athena.entertainguide.repository.impl.MovieRepositoryImpl
 import com.athena.entertainguide.sharedPreferences.SharedPreferencesManager
 import com.athena.entertainguide.sharedPreferences.SharedPreferencesManagerImpl
+import com.athena.entertainguide.ui.entertainment.EntertainmentViewModel
 import com.athena.entertainguide.ui.home.HomeViewModel
 import com.athena.entertainguide.ui.infomovie.InfoMovieViewModel
 import com.athena.entertainguide.ui.initial.InitialViewModel
@@ -26,9 +29,11 @@ val entertainGuideModule = module {
     single<DateProvider> { DateProviderImpl() }
     single<MovieRepository> { MovieRepositoryImpl(api = get()) }
     single<MovieBusiness> { MovieBusinessImpl(repository = get()) }
+    single<EntertainmentBusiness> { EntertainmentBusinessImpl(repository = get()) }
     single<InfoMovieBusiness> { InfoMovieBusinessImpl(repository = get()) }
     single { ConfigFeatureToggle() }
     viewModel { HomeViewModel(sharedPreference = get(), dateProvider = get()) }
     viewModel { InitialViewModel(Dispatchers.Main, get()) }
     viewModel { InfoMovieViewModel(Dispatchers.Main, get()) }
+    viewModel { EntertainmentViewModel(Dispatchers.Main, get()) }
 }

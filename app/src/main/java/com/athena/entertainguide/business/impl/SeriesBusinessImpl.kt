@@ -19,11 +19,11 @@ internal class SeriesBusinessImpl(
 ) : SeriesBusiness {
 
     override suspend fun getPopularSeries(page: Int): ResultWrapper<PopularEntities> {
-        return repository.getPopularSeries(page.toString(), getLanguage()).toResult().map(::convertResponseToPopularEntities)
+        return repository.getPopularSeries(page, getLanguage()).toResult().map(::convertResponseToPopularEntities)
     }
 
     override suspend fun getTopRatedSeries(page: Int): ResultWrapper<TopRatedEntities> {
-        return repository.getTopRatedSeries(page.toString(), getLanguage()).toResult().map(::convertResponseToTopRatedEntities)
+        return repository.getTopRatedSeries(page, getLanguage()).toResult().map(::convertResponseToTopRatedEntities)
     }
 
     private fun getResultTopRated(resultList: List<ResultItemTopRatedResponse>): List<ResultItemTopRated> {

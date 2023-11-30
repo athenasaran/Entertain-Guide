@@ -1,0 +1,90 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/now_showing_container"
+    android:layout_marginHorizontal="@dimen/spacing_24"
+    android:background="@drawable/border_gray">
+
+    <ImageView
+        android:id="@+id/now_showing_image"
+        android:layout_width="85dp"
+        android:layout_height="128dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="@dimen/spacing_24"
+        android:layout_alignParentTop="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_star" />
+
+    <TextView
+        android:id="@+id/now_showing_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_marginStart="@dimen/spacing_16"
+        android:layout_marginTop="@dimen/spacing_16"
+        android:textColor="@color/purple"
+        android:textSize="@dimen/text_size_16"
+        app:layout_constraintStart_toEndOf="@id/now_showing_image"
+        app:layout_constraintTop_toTopOf="@id/now_showing_image"
+        tools:text="@string/more_rated_movies" />
+
+    <ImageView
+        android:id="@+id/now_showing_icon_start"
+        android:layout_width="@dimen/spacing_24"
+        android:layout_height="@dimen/spacing_24"
+        android:layout_marginStart="@dimen/spacing_16"
+        android:layout_marginTop="@dimen/spacing_24"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/now_showing_average"
+        app:layout_constraintStart_toEndOf="@id/now_showing_image"
+        app:layout_constraintTop_toBottomOf="@id/now_showing_title"
+        app:srcCompat="@drawable/ic_star" />
+
+    <TextView
+        android:id="@+id/now_showing_average"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_8"
+        android:layout_marginTop="@dimen/spacing_26"
+        android:layout_marginEnd="@dimen/spacing_12"
+        tools:text="7.6"
+        android:textColor="@color/purple"
+        android:textSize="@dimen/text_size_12"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/now_showing_icon_start"
+        app:layout_constraintTop_toBottomOf="@id/now_showing_title" />
+
+    <ImageView
+        android:id="@+id/now_showing_icon_time"
+        android:layout_width="@dimen/spacing_24"
+        android:layout_height="@dimen/spacing_24"
+        android:layout_marginVertical="@dimen/spacing_24"
+        android:layout_marginStart="@dimen/spacing_16"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/now_showing_image"
+        app:layout_constraintTop_toBottomOf="@id/now_showing_average"
+        app:srcCompat="@drawable/ic_time" />
+
+    <TextView
+        android:id="@+id/now_showing_release_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_8"
+        android:layout_marginTop="@dimen/spacing_26"
+        android:layout_marginEnd="@dimen/spacing_12"
+        tools:text="2010-08-20"
+        android:textColor="@color/purple"
+        android:textSize="@dimen/text_size_12"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/now_showing_icon_time"
+        app:layout_constraintTop_toBottomOf="@id/now_showing_average" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

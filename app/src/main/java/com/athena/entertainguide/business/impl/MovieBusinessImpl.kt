@@ -12,6 +12,7 @@ import com.athena.entertainguide.repository.entity.response.ResultItemTopRatedRe
 import com.athena.entertainguide.repository.entity.response.TopRatedResponse
 import com.athena.entertainguide.response.ResultWrapper
 import com.athena.entertainguide.response.toResult
+import com.athena.entertainguide.utils.numbers.toBigDecimalWithPrecision
 import java.util.Locale
 
 internal class MovieBusinessImpl(
@@ -19,11 +20,11 @@ internal class MovieBusinessImpl(
 ) : MovieBusiness {
 
     override suspend fun getPopularMovie(page: Int): ResultWrapper<PopularEntities> {
-        return repository.getPopularMovie(page.toString(), getLanguage()).toResult().map(::convertResponseToPopularEntities)
+        return repository.getPopularMovie(page, getLanguage()).toResult().map(::convertResponseToPopularEntities)
     }
 
     override suspend fun getTopRatedMovie(page: Int): ResultWrapper<TopRatedEntities> {
-        return repository.getTopRatedMovie(page.toString(), getLanguage()).toResult().map(::convertResponseToTopRatedEntities)
+        return repository.getTopRatedMovie(page, getLanguage()).toResult().map(::convertResponseToTopRatedEntities)
     }
 
 
@@ -51,7 +52,7 @@ internal class MovieBusinessImpl(
                 id = listItemPopular.id,
                 posterPath = listItemPopular.posterPath,
                 title = listItemPopular.title,
-                voteAverage = listItemPopular.voteAverage
+                voteAverage = toBigDecimalWithPrecision(listItemPopular.voteAverage)
             )
             items.add(resultItemPopular)
         }
